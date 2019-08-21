@@ -14,7 +14,7 @@ export default function Registration(props) {
         const password = e.target.password.value;
 
 
-        axios.post("http://localhost:8080/addUser", {
+        axios.post("http://diceit.itancan.com:8604/addUser", {
             data: {
                 name: name,
                 nickname: nickname,

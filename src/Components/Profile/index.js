@@ -13,7 +13,7 @@ export default function Profile(props) {
     }
 
     function check() {
-        axios.post(`http://localhost:8080/IsLoggedIn?email=${user.email}&token=${user.token}`)
+        axios.post(`http://diceit.itancan.com:8604/IsLoggedIn?email=${user.email}&token=${user.token}`)
             .then(res => {
                 return (res.status == 200) ? res.data : "I don't know! (Something went wrong)";
             }).then(changeLoginMsg)

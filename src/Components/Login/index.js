@@ -10,7 +10,7 @@ export default function Login(props) {
         const email = e.target.email.value;
         const pass = e.target.password.value;
 
-        axios.post("http://localhost:8080/login", {data:{email:email,password:pass}})
+        axios.post("http://diceit.itancan.com:8604/login", {data:{email:email,password:pass}})
             .then(res => {
                 console.log(res)
                 if(!res.data.head.successful) {
