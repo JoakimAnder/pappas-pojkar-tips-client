@@ -28,20 +28,6 @@ export default function Login(props) {
 
     return (
         <div className="container">
-            <nav className="nav-header">
-                <ul className="nav justify-content-end">
-                    <li className="nav-item mr-2">
-                        <a href="#">Home</a>
-                    </li>
-                    <li className="nav-item mr-2">
-                        <a href="">About</a>
-                    </li>
-                    <li className="nav-item mr-2">
-                        <a href="">Sign Out</a>
-                    </li>
-                </ul>
-
-            </nav>
             <main className="container card p-0">
                 <form
                     className="text-center"

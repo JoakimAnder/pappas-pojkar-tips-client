@@ -5,13 +5,14 @@ import Login from "./Components/Login";
 import LoginCSS from "../src/Components/Login/Login-CSS.css";
 import Profile from "./Components/Profile";
 import Registration from "./Components/Registration";
+import Navbar from "./Components/Navbar";
 
 
 
 function App() {
   const [page, setPage] = useState("");
   const [token, setToken] = useState("");
-  const [user, setUser] = useState(null);
+  const [user, setUser] = useState({});
   const [errorMsg, setErrorMsg] = useState("");
 
 
@@ -38,6 +39,7 @@ function App() {
 
   return (
     <div className="App">
+      <Navbar setPage={setPage} setUser={setUser}/>
       <h4>{errorMsg}</h4>
       {parseState(page)}
     </div>
