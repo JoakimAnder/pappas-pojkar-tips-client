@@ -26,7 +26,8 @@ function App() {
 
   function parseState(page) {
     switch (page) {
-      case "profile": return <Profile setPage={setPage} user={user} setError={addError}/>;
+      case "profile": return <Profile setPage={setPage} user={user} setError={addError} setUser={setUser}/>;
+
       case "registration": return <Registration
           setError={addError}
           setUser={setUser}
