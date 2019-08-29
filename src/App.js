@@ -18,7 +18,7 @@ function App() {
 
   function parseState(page) {
     switch (page) {
-      case "profile": return <Profile setPage={setPage} user={user} setError={setErrorMsg}/>;
+      case "profile": return <Profile setPage={setPage} user={user} setError={setErrorMsg} setUser={setUser}/>;
       case "registration": return <Registration
           setError={setErrorMsg}
           setUser={setUser}
@@ -40,7 +40,7 @@ function App() {
   return (
     <div className="App">
       <Navbar setPage={setPage} setUser={setUser}/>
-      <h4>{errorMsg}</h4>
+      <h4 className="text-danger">{errorMsg}</h4>
       {parseState(page)}
     </div>
   );
