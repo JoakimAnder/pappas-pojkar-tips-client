@@ -6,6 +6,7 @@ import LoginCSS from "../src/Components/Login/Login-CSS.css";
 import Profile from "./Components/Profile";
 import Registration from "./Components/Registration";
 import Navbar from "./Components/Navbar";
+import ErrorMessage from "./Components/ErrorMessage";
 
 
 
@@ -13,19 +14,27 @@ function App() {
   const [page, setPage] = useState("");
   const [token, setToken] = useState("");
   const [user, setUser] = useState({});
-  const [errorMsg, setErrorMsg] = useState("");
+  const [errorMsgs, setErrorMsgs] = useState([]);
+  function removeError(index) {
+    setErrorMsgs(errorMsgs.filter((e,ei) => ei !== index))
+  }
+
+  function addError(error) {
+    setErrorMsgs(errorMsgs.concat(error))
+  }
 
 
   function parseState(page) {
     switch (page) {
-      case "profile": return <Profile setPage={setPage} user={user} setError={setErrorMsg}/>;
+      case "profile": return <Profile setPage={setPage} user={user} setError={addError} setUser={setUser}/>;
+
       case "registration": return <Registration
-          setError={setErrorMsg}
+          setError={addError}
           setUser={setUser}
           setPage={setPage}
       />;
       default: return <Login
-          setError={setErrorMsg}
+          setError={addError}
           setToken={setToken}
           setUser={setUser}
           setPage={setPage}
@@ -40,7 +49,13 @@ function App() {
   return (
     <div className="App">
       <Navbar setPage={setPage} setUser={setUser}/>
-      <h4>{errorMsg}</h4>
+      {errorMsgs.map((error, index) =>
+          <ErrorMessage
+              key={index}
+              error={error}
+              remove={() => removeError(index)}
+          />)
+      }
       {parseState(page)}
     </div>
   );

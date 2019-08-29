@@ -12,6 +12,15 @@ export default function Registration(props) {
         const phone = e.target.phone.value;
         const email = e.target.email.value;
         const password = e.target.password.value;
+        const password2 = e.target["confirm-password"].value;
+
+        if(password !== password2) {
+            props.setError("Passwords doesn't match");
+
+
+            e.target.password.focus();
+            return;
+        }
 
 
         axios.post("http://diceit.itancan.com:8604/addUser", {
@@ -35,38 +44,47 @@ export default function Registration(props) {
 
     }
 
-    return (
-        <div>
-            <form onSubmit={submit}>
-                <input
-                    required
-                    name={"email"}
-                    placeholder={"Email"}
-                />
-                <input
-                    required
-                    name={"password"}
-                    placeholder={"Password"}
-                />
-                <input
-                    required
-                    name={"name"}
-                    placeholder={"Name"}
-                />
-                <input
-                    name={"nickname"}
-                    placeholder={"Nickname (optional)"}
-                />
-                <input
-                    required
-                    name={"phone"}
-                    placeholder={"Phone"}
-                />
+    function formField(field, type="text", required=true) {
+        field = String(field).toLowerCase();
+        const capitalized = field.split("-")
+            .map(w => `${w[0].toUpperCase()}${w.substring(1)}`)
+            .join(" ");
+        const id = `reg-${field}`;
+        return (
+            <div className="form-group row">
+                <label htmlFor={id} className="col-sm-3 col-md-2 col-form-label text-sm-right" >{capitalized+":"}</label>
+                <div className={"col-sm-9 col-md-10"}>
+                    <input
+                        className={"form-control"}
+                        type={type}
+                        required={required}
+                        id={id}
+                        placeholder={`${capitalized}${required? "" : " (optional)"}`}
+                        name={field}
+                        defaultValue={""}
+                    />
+                </div>
+            </div>
+        )
+    }
 
-                <button type={"Submit"}>
-                    Submit
-                </button>
-            </form>
+    return (
+        <div className={"container"}>
+            <main className={"card p-2"}>
+                <form onSubmit={submit}>
+                    <h1>Register</h1>
+                    {formField("email", "email")}
+                    {formField("password", "password")}
+                    {formField("confirm-password", "password")}
+                    {formField("name")}
+                    {formField("nickname", "text", false)}
+                    {formField("phone")}
+
+                    <button type={"Submit"}>
+                        Submit
+                    </button>
+                </form>
+            </main>
         </div>
     )
 }
