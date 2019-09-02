@@ -20,7 +20,7 @@ export default function Login(props) {
                     const user = res.data.data;
                     props.setUser(user);
                     props.setToken(user.token);
-                    props.setPage("profile");
+                    props.setPage("game");
                 }
             })
             .catch(console.log);
