@@ -34,6 +34,37 @@ export function deleteUser(user,setErrorMsg){
         })
 }
 
+export function registerUser(user, successful, error) {
+    axios.post("http://diceit.itancan.com:8604/addUser", {
+        data: {
+            name: user.name,
+            nickname: user.nickname,
+            phone: user.phone,
+            email: user.email,
+            password: user.password
+        }
+    }).then(res => {
+        if (!res.data.head.successful) {
+            error(res.data.head.message);
+        } else {
+            successful(res.data.data);
+        }
+    }).catch(console.error);
+}
+
+export function loginUser(user, successful, error) {
+    axios.post("http://diceit.itancan.com:8604/login", {data:{email:user.email,password:user.password}})
+        .then(res => {
+            console.log(res)
+            if(!res.data.head.successful) {
+                error(res.data.head.message)
+            } else {
+                successful(res.data.data);
+            }
+        })
+        .catch(console.error);
+}
+
 // fetch(`http://diceit.itancan.com:8605/user/${user.id}?token=${user.token}`,{
 //     method: "put",
 //     headers: {

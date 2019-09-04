@@ -1,7 +1,7 @@
 import React from "react";
 import LoginCSS from "./Login-CSS.css";
+import {loginUser} from "../../ApiRequest";
 
-const axios = require("axios");
 
 export default function Login(props) {
 
@@ -9,21 +9,13 @@ export default function Login(props) {
         e.preventDefault();
 
         const email = e.target.email.value;
-        const pass = e.target.password.value;
+        const password = e.target.password.value;
 
-        axios.post("http://diceit.itancan.com:8604/login", {data:{email:email,password:pass}})
-            .then(res => {
-                console.log(res)
-                if(!res.data.head.successful) {
-                    props.setError(res.data.head.message)
-                } else {
-                    const user = res.data.data;
-                    props.setUser(user);
-                    props.setToken(user.token);
-                    props.setPage("profile");
-                }
-            })
-            .catch(console.log);
+        function succ(u) {
+            props.setUser(u);
+            props.setPage("profile")
+        }
+        loginUser({email,password}, succ, props.setError);
     }
 
     return (
