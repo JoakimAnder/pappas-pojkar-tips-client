@@ -5,6 +5,7 @@ import Profile from "./Components/Profile";
 import Registration from "./Components/Registration";
 import Navbar from "./Components/Navbar";
 import ErrorMessage from "./Components/ErrorMessage";
+import Game from "./Components/Game";
 
 
 
@@ -25,7 +26,7 @@ function App() {
   function parseState(page) {
     switch (page) {
       case "profile": return <Profile setPage={setPage} user={user} setError={addError} setUser={setUser}/>;
-
+      case "game": return <Game />;
       case "registration": return <Registration
           setError={addError}
           setUser={setUser}
