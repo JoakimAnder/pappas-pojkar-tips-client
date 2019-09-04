@@ -1,8 +1,6 @@
 import React, { useState } from 'react';
 
-import './App.css';
 import Login from "./Components/Login";
-import LoginCSS from "../src/Components/Login/Login-CSS.css";
 import Profile from "./Components/Profile";
 import Registration from "./Components/Registration";
 import Navbar from "./Components/Navbar";
