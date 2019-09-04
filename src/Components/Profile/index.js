@@ -48,7 +48,10 @@ export default function Profile(props) {
 
     }
     function deleteAccount() {
-        deleteUser(user,props.setError);
+        deleteUser(user,props.setError, () => {
+            props.setPage("login");
+            props.setUser({});
+        });
     }
 
 

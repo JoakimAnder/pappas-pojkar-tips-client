@@ -24,14 +24,18 @@ export function updateUser(user,setErrorMsg,setUser) {
         })
 }
 
-export function deleteUser(user,setErrorMsg){
-    axios.delete(`http://diceit.itancan.com:8605/user/${user.id}?token=${user.token}`,user)
-        .then(response => {
-            if(response.data) console.log("DELETED")
-        })
-        .catch((error) =>{
-            setErrorMsg(error.response.data.message)
-        })
+export function deleteUser(user,setErrorMsg, callback){
+    fetch(`http://diceit.itancan.com:8605/user/${user.id}?token=${user.token}`, {
+        method: "delete",
+        headers: {"content-type": "application/json"},
+        body: JSON.stringify(user)
+    }).then(res => res.json())
+        .then(b => {
+            if(b) {
+                console.log("deleted");
+                callback(b);
+            }
+        }).catch(e => setErrorMsg(e.response.data.message))
 }
 
 // fetch(`http://diceit.itancan.com:8605/user/${user.id}?token=${user.token}`,{
