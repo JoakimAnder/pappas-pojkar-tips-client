@@ -1,214 +1,101 @@
-import React from 'react';
-import {Card, CardGroup} from "react-bootstrap";
-import GhostCss from './index.css'
+import { useFetch } from './useFetch';
+import React,{useState} from 'react';
+import styles from "./styles.css";
+import {Card, CardGroup, CardDeck, CardColumns, Container, Row} from "react-bootstrap";
+let quiz = require ("./data.js");
 
-const GhostQuiz = () => {
+
+ const GhostQuiz = () => {
+     const [questions, setQuestions] = useState(quiz.game.tips[0].questions);
+
+     function  ghostMatches  (match, matchIndex){
+    let button1Selected = false;
+    let button2Selected = false;
+          if(match.selected === 0){
+       button1Selected = true;
+     }
+     if(match.selected === 1){
+         button2Selected = true;
+     }
+     function select(index) {
+         let newList = JSON.parse(JSON.stringify(questions));
+
+         newList[matchIndex].selected = index;
+
+         setQuestions(newList)
+     }
+
+     return(
+
+         <Card bg="primary" text="white" className="match-card">
+             <Card.Header>{match.matchNr}</Card.Header>
+             <Card.Body>
+
+                 <button onClick={() => select(0)} className={ button1Selected ? "btn-dark" : "btn-outline-dark"}>{match.alternatives[0]}</button>
+                 <p><strong>VS</strong> </p>
+                 <button onClick={() => select(1)} className={ button2Selected ? "btn-dark" : "btn-outline-dark"}> {match.alternatives[1]}</button>
+
+             </Card.Body>
+         </Card>
+
+
+
+
+
+     )
+     }
+
+
     return (
+
         <div>
+
             <CardGroup>
-                <Card bg="primary" text="white" className="card-match">
-                    <Card.Header>Match 49</Card.Header>
-                    <Card.Body>
-                        <Card.Title></Card.Title>
-                        <Card.Text>
-                            <p>Sweden</p>
-                            <p> <strong>VS</strong> </p>
-                            <p>Argentina</p>
-                            1
-                            <input type="radio" name="match" className="input mr-2"/>
-                            2
-                            <input type="radio" name="match"/>
-                        </Card.Text>
-                    </Card.Body>
-                </Card>
-                <br />
 
-                <Card bg="primary" text="white" className="card-match">
-                    <Card.Header>Match 50</Card.Header>
-                    <Card.Body>
-                        <Card.Title></Card.Title>
-                        <Card.Text>
-                            <p>Germany</p>
-                            <p> <strong>VS</strong> </p>
-                            <p>Japan</p>
-                        </Card.Text>
-                    </Card.Body>
-                </Card>
-                <br />
-                <Card bg="primary" text="white" className="card-match">
-                    <Card.Header>Match 51</Card.Header>
-                    <Card.Body>
-                        <Card.Title></Card.Title>
-                        <Card.Text>
-                            <p>Netherlands</p>
-                            <p> <strong>VS</strong> </p>
-                            <p>Uruguay</p>
-                        </Card.Text>
-                    </Card.Body>
-                </Card>
-                <br />
-                <Card bg="primary" text="white" className="card-match">
-                    <Card.Header>Match 52</Card.Header>
-                    <Card.Body >
-                        <Card.Title></Card.Title>
-                        <Card.Text>
-                            <p>France</p>
-                            <p> <strong>VS</strong> </p>
-                            <p>Brazil</p>
-                        </Card.Text>
-                    </Card.Body>
-                </Card>
-                <br />
-                <Card bg="primary" text="white" className="card-match">
-                    <Card.Header>Match 53</Card.Header>
-                    <Card.Body >
-                        <Card.Title></Card.Title>
-                        <Card.Text>
-                            <p>Norway</p>
-                            <p> <strong>VS</strong> </p>
-                            <p>Denmark</p>
-                        </Card.Text>
-                    </Card.Body>
-                </Card>
-                <br />
-                <Card bg="primary" text="white" className="card-match">
-                    <Card.Header>Match 54</Card.Header>
-                    <Card.Body>
-                        <Card.Title></Card.Title>
-                        <Card.Text>
-                            <p>Norway</p>
-                            <p> <strong>VS</strong> </p>
-                            <p>Denmark</p>
-                        </Card.Text>
-                    </Card.Body>
-                </Card>
-                <br />
-                <Card bg="primary" text="white" className="card-match">
-                    <Card.Header>Match 55</Card.Header>
-                    <Card.Body >
-                        <Card.Title></Card.Title>
-                        <Card.Text>
-                            <p>Norway</p>
-                            <p> <strong>VS</strong> </p>
-                            <p>Denmark</p>
-                        </Card.Text>
-                    </Card.Body>
-                </Card>
-                <br />
-                <Card bg="primary" text="white" className="card-match">
-                    <Card.Header>Match 56</Card.Header>
-                    <Card.Body>
-                        <Card.Title></Card.Title>
-                        <Card.Text>
-                            <p>Norway</p>
-                            <p> <strong>VS</strong> </p>
-                            <p>Denmark</p>
-                        </Card.Text>
-                    </Card.Body>
-                </Card>
-                <br />
+            {questions.slice(0,8).map((m, index) => (
+                ghostMatches(m, index)
+            ))}
             </CardGroup>
-            {/*QUATER-FINAL*/}
-            <div>
-                <CardGroup>
-                    <Card className="card-match" bg="primary" text="white" className="card-match">
-                        <Card.Header>Match 57</Card.Header>
-                        <Card.Body>
-                            <Card.Title></Card.Title>
-                            <Card.Text>
-                                <p>Quarter-final</p>
-                                <p> <strong>VS</strong> </p>
-                                <p>Quarter-final</p>
-                            </Card.Text>
-                        </Card.Body>
-                    </Card>
-                    <br />
 
-                    <Card bg="primary" text="white" className="card-match">
-                        <Card.Header>Match 58</Card.Header>
-                        <Card.Body>
-                            <Card.Title></Card.Title>
-                            <Card.Text>
-                                <p>Quarter-final</p>
-                                <p> <strong>VS</strong> </p>
-                                <p>Quarter-final</p>
-                            </Card.Text>
-                        </Card.Body>
-                    </Card>
-                    <br />
-                    <Card bg="primary" text="white" className="card-match">
-                        <Card.Header>Match 59</Card.Header>
-                        <Card.Body>
-                            <Card.Title></Card.Title>
-                            <Card.Text>
-                                <p>Quarter-final</p>
-                                <p> <strong>VS</strong> </p>
-                                <p>Quarter-final</p>
-                            </Card.Text>
-                        </Card.Body>
-                    </Card>
-                    <br />
-                    <Card bg="primary" text="white" className="card-match">
-                        <Card.Header>Match 60</Card.Header>
-                        <Card.Body>
-                            <Card.Title></Card.Title>
-                            <Card.Text>
-                                <p>Quarter-final</p>
-                                <p> <strong>VS</strong> </p>
-                                <p>Quarter-final</p>
-                            </Card.Text>
-                        </Card.Body>
-                    </Card>
-                    <br />
-                </CardGroup>
-            </div>
-            {/*SEMI-FINAL*/}
-            <div>
-                <CardGroup>
-                    <Card bg="primary" text="white" className="card-match">
-                        <Card.Header>Match 61</Card.Header>
-                        <Card.Body>
-                            <Card.Title></Card.Title>
-                            <Card.Text>
-                                <p>Semi-final</p>
-                                <p> <strong>VS</strong> </p>
-                                <p>Semi-final</p>
-                            </Card.Text>
-                        </Card.Body>
-                    </Card>
-                    <br />
+            <CardGroup>
 
-                    <Card bg="primary" text="white" className="card-match">
-                        <Card.Header>Match 62</Card.Header>
-                        <Card.Body >
-                            <Card.Title></Card.Title>
-                            <Card.Text>
-                                <p>Semi-final</p>
-                                <p> <strong>VS</strong> </p>
-                                <p>Semi-final</p>
-                            </Card.Text>
-                        </Card.Body>
-                    </Card>
-                    <br />
-                </CardGroup>
-            </div>
-            {/*FINAL*/}
-            <div>
-                <CardGroup>
-                    <Card bg="primary" text="white"  className="card-match">
-                        <Card.Header>Match 63</Card.Header>
-                        <Card.Body>
-                            <Card.Title></Card.Title>
-                            <Card.Text>
-                                <p>Final</p>
-                                <p> <strong>VS</strong> </p>
-                                <p>Final</p>
-                            </Card.Text>
-                        </Card.Body>
-                    </Card>
-                    <br />
-                </CardGroup>
-            </div>
+            {questions.slice(8,12).map((m, index) => (
+                ghostMatches(m, index +8)
+            ))}
+            </CardGroup>
+
+            <CardGroup>
+
+            {questions.slice(12,14).map((m, index) => (
+                ghostMatches(m, index +12)
+            ))}
+            </CardGroup>
+
+            <CardGroup>
+
+            {questions.slice(14).map((m, index) => (
+                ghostMatches(m, index +14)
+            ))}
+            </CardGroup>
+
+
+            {/*<div>*/}
+
+            {/*<CardGroup>*/}
+            {/*    <Card bg="primary" text="white" className="card-match">*/}
+            {/*        <Card.Header>{quiz.game.tips[0].questions[0].matchNr}</Card.Header>*/}
+            {/*        <Card.Body>*/}
+            {/*            <Card.Title>HEJSAN</Card.Title>*/}
+            {/*            <Card.Text>*/}
+            {/*                <button className="btn-warning">{quiz.game.tips[0].questions[0].alternatives[0]}</button>*/}
+            {/*                <p> <strong>VS</strong> </p>*/}
+            {/*                <button className="btn-warning">{quiz.game.tips[0].questions[0].alternatives[1]}</button>*/}
+            {/*            </Card.Text>*/}
+            {/*        </Card.Body>*/}
+            {/*    </Card>*/}
+            {/*</CardGroup>*/}
+            {/*</div>*/}
+
         </div>
     );
 };

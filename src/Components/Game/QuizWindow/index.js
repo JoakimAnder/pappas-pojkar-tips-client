@@ -7,7 +7,7 @@ const QuizWindow = () => {
     function parseState() {
         switch(quiz) {
             case "test": return <div />;
-            case "GhostQuiz": return <GhostQuiz setQuiz={setQuiz}/>
+            case "ghostQuiz": return <GhostQuiz setQuiz={setQuiz}/>
             default: return <div />;
         }
     }
@@ -15,7 +15,7 @@ const QuizWindow = () => {
         <div>
             {/*tabs*/}
             <button>Group Stage</button>
-            <button onClick={()=>setQuiz("GhostQuiz")}>Ghost Quiz</button>
+            <button onClick={()=>setQuiz("ghostQuiz")}>Ghost Quiz</button>
             <button>Group Endings</button>
             <button>Battle of the north</button>
             {/*quiz*/}
