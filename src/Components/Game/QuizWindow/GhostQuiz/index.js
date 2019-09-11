@@ -30,72 +30,40 @@ let quiz = require ("./data.js");
          <Card bg="primary" text="white" className="match-card">
              <Card.Header>{match.matchNr}</Card.Header>
              <Card.Body>
-
                  <button onClick={() => select(0)} className={ button1Selected ? "btn-dark" : "btn-outline-dark"}>{match.alternatives[0]}</button>
                  <p><strong>VS</strong> </p>
                  <button onClick={() => select(1)} className={ button2Selected ? "btn-dark" : "btn-outline-dark"}> {match.alternatives[1]}</button>
-
              </Card.Body>
          </Card>
-
-
-
-
-
      )
      }
-
 
     return (
 
         <div>
-
             <CardGroup>
-
             {questions.slice(0,8).map((m, index) => (
                 ghostMatches(m, index)
             ))}
             </CardGroup>
 
             <CardGroup>
-
             {questions.slice(8,12).map((m, index) => (
                 ghostMatches(m, index +8)
             ))}
             </CardGroup>
 
             <CardGroup>
-
             {questions.slice(12,14).map((m, index) => (
                 ghostMatches(m, index +12)
             ))}
             </CardGroup>
 
             <CardGroup>
-
             {questions.slice(14).map((m, index) => (
                 ghostMatches(m, index +14)
             ))}
             </CardGroup>
-
-
-            {/*<div>*/}
-
-            {/*<CardGroup>*/}
-            {/*    <Card bg="primary" text="white" className="card-match">*/}
-            {/*        <Card.Header>{quiz.game.tips[0].questions[0].matchNr}</Card.Header>*/}
-            {/*        <Card.Body>*/}
-            {/*            <Card.Title>HEJSAN</Card.Title>*/}
-            {/*            <Card.Text>*/}
-            {/*                <button className="btn-warning">{quiz.game.tips[0].questions[0].alternatives[0]}</button>*/}
-            {/*                <p> <strong>VS</strong> </p>*/}
-            {/*                <button className="btn-warning">{quiz.game.tips[0].questions[0].alternatives[1]}</button>*/}
-            {/*            </Card.Text>*/}
-            {/*        </Card.Body>*/}
-            {/*    </Card>*/}
-            {/*</CardGroup>*/}
-            {/*</div>*/}
-
         </div>
     );
 };
