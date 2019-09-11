@@ -25,6 +25,7 @@ yarn-error.log*
 
 ### IntelliJ IDEA ###
 .idea
+.idea/workspace.xml
 *.iws
 *.iml
 *.ipr
@@ -40,4 +41,3 @@ build/
 ### VS Code ###
 .vscode/
 
-.idea/workspace.xml
