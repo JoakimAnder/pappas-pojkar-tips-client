@@ -2,7 +2,6 @@ import React, {useState, useEffect} from "react"
 import Leaderboard from "../Leaderboard";
 import {updateUser , updatePassword, deleteUser}   from "../../ApiRequest";
 
-const axios = require("axios");
 
 export default function Profile(props) {
     const user = props.user;

@@ -1,6 +1,5 @@
 import React from "react"
-
-const axios = require("axios");
+import {registerUser} from "../../ApiRequest";
 
 export default function Registration(props) {
 
@@ -23,24 +22,19 @@ export default function Registration(props) {
         }
 
 
-        axios.post("http://diceit.itancan.com:8604/addUser", {
-            data: {
-                name: name,
-                nickname: nickname,
-                phone: phone,
-                email: email,
-                password: password
-            }
-        }).then(res => {
-            if (!res.data.head.successful) {
-                props.setError(res.data.head.message)
-            } else {
-                props.setUser(res.data.data);
-                props.setPage("login");
-            }
-        })
+        const user = {
+            name,
+            nickname,
+            phone,
+            email,
+            password
+        };
 
-
+        function succ(u) {
+            props.setUser(u);
+            props.setPage("login");
+        }
+        registerUser(user, succ, props.setError);
 
     }
 
