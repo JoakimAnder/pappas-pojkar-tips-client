@@ -1,12 +1,9 @@
-import { useFetch } from './useFetch';
 import React,{useState} from 'react';
-import styles from "./styles.css";
-import {Card, CardGroup, CardDeck, CardColumns, Container, Row} from "react-bootstrap";
-let quiz = require ("./data.js");
+import {Card, CardGroup} from "react-bootstrap";
 
 
  const GhostQuiz = () => {
-     const [questions, setQuestions] = useState(quiz.game.tips[0].questions);
+     const [questions, setQuestions] = useState();
 
      function  ghostMatches  (match, matchIndex){
     let button1Selected = false;

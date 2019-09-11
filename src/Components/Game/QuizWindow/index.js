@@ -1,5 +1,4 @@
 import React, {useState} from 'react';
-import { Button,Container, Row,Col,Card,CardDeck,CardGroup } from 'react-bootstrap';
 import GhostQuiz from "./GhostQuiz";
 
 const QuizWindow = () => {
@@ -7,7 +6,7 @@ const QuizWindow = () => {
     function parseState() {
         switch(quiz) {
             case "test": return <div />;
-            case "ghostQuiz": return <GhostQuiz setQuiz={setQuiz}/>
+            case "ghostQuiz": return <GhostQuiz/>
             default: return <div />;
         }
     }
@@ -21,7 +20,7 @@ const QuizWindow = () => {
             {/*quiz*/}
 
 
-            {parseState(setQuiz)}
+            {parseState()}
         </div>
     );
 };
