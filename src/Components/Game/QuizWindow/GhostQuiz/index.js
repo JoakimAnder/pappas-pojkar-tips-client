@@ -3,7 +3,7 @@ import {Card, CardGroup} from "react-bootstrap";
 
 
  const GhostQuiz = () => {
-     const [questions, setQuestions] = useState();
+     const [questions, setQuestions] = useState([]);
 
      function  ghostMatches  (match, matchIndex){
     let button1Selected = false;
