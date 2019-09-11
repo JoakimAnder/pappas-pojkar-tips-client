@@ -2,8 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1f105af9-b4ad-4014-804e-dc0de5407f15" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/Components/Game/QuizWindow/GhostQuiz/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Components/Game/QuizWindow/GhostQuiz/styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Game/QuizWindow/GhostQuiz/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Game/QuizWindow/GhostQuiz/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Game/QuizWindow/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Game/QuizWindow/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Game/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Game/index.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -45,16 +51,11 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="javascript.nodejs.core.library.configured.version" value="10.16.2" />
-    <property name="last_opened_file_path" value="$USER_HOME$/myprojects/React-hooks/react-hooks-practice" />
+    <property name="javascript.nodejs.core.library.configured.version" value="10.15.3" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\IntelliJ IDEA 2019.2\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
-  </component>
-  <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\mehtab\Desktop\JockeDemo\pappas-pojkar-tips-client" />
-    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -122,16 +123,6 @@
       <workItem from="1566378353903" duration="765000" />
       <workItem from="1567062577077" duration="17780000" />
       <workItem from="1567583405183" duration="280000" />
-      <workItem from="1567586945236" duration="11307000" />
-      <workItem from="1567700869393" duration="6038000" />
-      <workItem from="1567761091056" duration="774000" />
-      <workItem from="1567791192365" duration="488000" />
-      <workItem from="1567791902500" duration="715000" />
-      <workItem from="1568012588047" duration="18621000" />
-      <workItem from="1568051905294" duration="1930000" />
-      <workItem from="1568097733446" duration="685000" />
-      <workItem from="1568132287016" duration="2319000" />
-      <workItem from="1568184671128" duration="3276000" />
     </task>
     <servers />
   </component>

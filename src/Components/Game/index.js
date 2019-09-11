@@ -1,6 +1,7 @@
 import React from 'react';
 import QuizWindow from "./QuizWindow";
 import Leaderboard from "../Leaderboard";
+
 import {Col, Container, Row} from "react-bootstrap";
 
 const Game = () => {
@@ -21,7 +22,6 @@ const Game = () => {
                 </Container>
 
             </div>
-
     );
 };
 

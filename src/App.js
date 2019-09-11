@@ -6,6 +6,7 @@ import Registration from "./Components/Registration";
 import Navbar from "./Components/Navbar";
 import ErrorMessage from "./Components/ErrorMessage";
 import Game from "./Components/Game";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 
