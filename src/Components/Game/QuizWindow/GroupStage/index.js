@@ -1,7 +1,16 @@
 import React, {useState} from 'react';
+import TableQuiz from "../TableQuiz";
 
 const GroupStage = props => {
-    const [questions, setQuestions] = useState(props.data.game.tips[1].questions);
+    if(!props.data)return <></>;
+
+    return <TableQuiz questions={props.data.questions} />
+};
+
+export default GroupStage;
+
+/*
+const [questions, setQuestions] = useState(props.data.game.tips[1].questions);
     const teams = props.data.teams;
 
     function changeQs(i, b) {
@@ -69,6 +78,4 @@ const GroupStage = props => {
             </button>
         </div>
     );
-};
-
-export default GroupStage;
+ */
