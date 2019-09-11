@@ -22,7 +22,6 @@ function App() {
     setErrorMsgs(errorMsgs.concat(error))
   }
 
-
   function parseState(page) {
     switch (page) {
       case "profile": return <Profile setPage={setPage} user={user} setError={addError} setUser={setUser}/>;
