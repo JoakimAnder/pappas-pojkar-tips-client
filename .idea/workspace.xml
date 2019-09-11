@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1f105af9-b4ad-4014-804e-dc0de5407f15" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Components/Game/QuizWindow/GhostQuiz/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Game/QuizWindow/GhostQuiz/index.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -130,7 +131,7 @@
       <workItem from="1568051905294" duration="1930000" />
       <workItem from="1568097733446" duration="685000" />
       <workItem from="1568132287016" duration="2319000" />
-      <workItem from="1568184671128" duration="3020000" />
+      <workItem from="1568184671128" duration="3276000" />
     </task>
     <servers />
   </component>

@@ -2,8 +2,11 @@ import React,{useState} from 'react';
 import {Card, CardGroup} from "react-bootstrap";
 
 
- const GhostQuiz = () => {
-     const [questions, setQuestions] = useState([]);
+ const GhostQuiz = (props) => {
+     const [questions, setQuestions] = useState(props.questions);
+     if(!questions){
+         return "";
+     }
 
      function  ghostMatches  (match, matchIndex){
     let button1Selected = false;
