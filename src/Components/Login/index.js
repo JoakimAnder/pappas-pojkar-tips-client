@@ -13,7 +13,7 @@ export default function Login(props) {
 
         function succ(u) {
             props.setUser(u);
-            props.setPage("profile")
+            props.setPage("game")
         }
         loginUser({email,password}, succ, props.setError);
     }

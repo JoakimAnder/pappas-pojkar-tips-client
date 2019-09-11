@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 
-import './App.css';
 import Login from "./Components/Login";
-import LoginCSS from "../src/Components/Login/Login-CSS.css";
 import Profile from "./Components/Profile";
 import Registration from "./Components/Registration";
 import Navbar from "./Components/Navbar";
 import ErrorMessage from "./Components/ErrorMessage";
+import Game from "./Components/Game";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 
@@ -23,11 +23,10 @@ function App() {
     setErrorMsgs(errorMsgs.concat(error))
   }
 
-
   function parseState(page) {
     switch (page) {
       case "profile": return <Profile setPage={setPage} user={user} setError={addError} setUser={setUser}/>;
-
+      case "game": return <Game />;
       case "registration": return <Registration
           setError={addError}
           setUser={setUser}
