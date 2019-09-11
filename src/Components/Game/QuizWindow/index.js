@@ -6,7 +6,7 @@ const QuizWindow = props => {
     const [quiz, setQuiz] = useState("");
     function parseState() {
         switch(quiz) {
-            case "groupStage": return <GroupStage data={props.data.tips[1]} />;
+            case "groupStage": return <GroupStage />;
             case "ghostQuiz": return <GhostQuiz/>;
             default: return <div />;
         }
@@ -14,7 +14,7 @@ const QuizWindow = props => {
     return (
         <div>
             {/*tabs*/}
-            <button>Group Stage</button>
+            <button onClick={()=>setQuiz("groupStage")}>Group Stage</button>
             <button onClick={()=>setQuiz("ghostQuiz")}>Ghost Quiz</button>
             <button>Group Endings</button>
             <button>Battle of the north</button>
